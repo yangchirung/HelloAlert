@@ -21,7 +21,7 @@ class ViewController: UIViewController {
          let alertController = UIAlertController(
                    title: "請注意",
                    message: "看我這兒好嗎？",
-                   preferredStyle: .alert)
+                   preferredStyle: .actionSheet)
         
         
                
@@ -44,7 +44,9 @@ class ViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(identifier: "myNewVCID")
+//        nextVC.modalPresentationStyle = .overCurrentContext
         nextVC.modalPresentationStyle = .fullScreen
+        
         present(nextVC, animated: true, completion: nil)
     }
    
