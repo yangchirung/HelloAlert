@@ -15,28 +15,38 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     @IBAction func buttonAction(_ sender: Any) {
         
          let alertController = UIAlertController(
                    title: "請注意",
                    message: "看我這兒好嗎？",
                    preferredStyle: .alert)
+        
+        
                
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
                    print("OK clicked")
                     }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            print("Cancel clicked")
-        }
-
-        
         alertController.addAction(okAction)
-        alertController.addAction(cancelAction)
+        
+       let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+           print("Cancel clicked")
+       }
+       alertController.addAction(cancelAction)
         
                
         present(alertController, animated: true, completion: nil)
     }
     
+    
+    @IBAction func action2(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(identifier: "myNewVCID")
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC, animated: true, completion: nil)
+    }
    
 }
 
